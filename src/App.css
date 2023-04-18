@@ -1,0 +1,22 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  p,div,h1,h2,h3,h4,h5,ul,li,a {
+    padding: 0;
+    margin: 0;
+  }
+  div.app {
+    z-index: 1000;
+  }
+
+  button.addtobag-card-btn {
+    width: 8rem;
+    height: 3rem;
+    background-color: black;
+    color: white;
+    border-radius: 0.3rem;
+
+  }

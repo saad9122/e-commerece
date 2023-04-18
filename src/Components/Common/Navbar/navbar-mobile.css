@@ -1,0 +1,76 @@
+
+
+
+/* =================div navbar==================== */
+@media screen and (max-width:576px){
+    div.navbar{
+        display: none;
+        
+    }
+ }
+ div.navbar.mobile {
+    position: fixed;
+    display: block;
+    left: 0rem;
+    right: 0rem;
+    top: 0rem;
+    bottom: 0rem;
+    width: auto;
+    height: auto;
+    background-color: grey;
+    overflow: visible;
+    
+ }
+ 
+  /* =================navbar ul==================== */
+
+div.navbar-mobile ul.navbar-ul {
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 1rem;
+    right: 1rem;
+    background-color:rebeccapurple;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+}
+ /* =================navbar li==================== */
+
+div.navbar.mobile li {
+    display:block;
+    
+}
+div.navbar.mobile a{
+    display: block;
+    padding: 0.5rem;
+    
+}
+
+
+
+
+
+
+ /* ================ navbar-toggler ================ */
+
+ @media screen and (max-width:576px) {
+    .navbar-toggle {
+        display:block;
+        font-size: 1.4rem;
+        margin: 0 0.4rem;
+     }
+    
+ }
+  .navbar-toggle.mobile {
+    z-index: 1050;
+    position: absolute;
+    top: 1.4rem;
+    right: 0.2rem;
+    font-size: 1.4rem;
+    margin: 0 0.4rem;
+    background-color: red;
+    padding: 0.1rem 0.5rem;
+ }
+
+ 

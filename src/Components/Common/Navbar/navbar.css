@@ -1,0 +1,149 @@
+
+section#header {
+    position: relative;
+    z-index: 1050;
+}
+
+/* =================all navbar==================== */
+
+div.all-navbar{
+    position: fixed;
+    width: 100%;  
+    background-color: white;
+    
+}
+
+
+
+/* =================div navbar==================== */
+div.navbar {
+    height: 3.5rem;
+    transition: 0.4s;
+}
+
+
+/* =================navbar ul==================== */
+ul.navbar-ul {
+    padding: 0;
+
+}
+
+
+
+/* =================navbar li==================== */
+
+div.navbar.pc li {
+    display: inline-block;
+    padding: 0rem 1rem;
+
+}
+ /* ============== navbar a =============== */
+div.navbar.pc a {
+    text-decoration: none;
+    color: black;
+    display: block  ;
+    padding: 0.5rem 0rem;
+    margin-top: 0.2rem;
+}
+
+div.navbar.pc a:hover {
+    border-bottom: 2px solid black;
+}
+ /* ================ navbar-icons ================ */
+
+ div.cartIcon-container {
+    position: relative;
+ }
+.icons {
+    font-size: 1.4rem;
+    margin:0 0.4rem ;
+    cursor: pointer;
+}
+
+.icons:hover {
+    transform: scale(1.1);
+}
+
+
+p.cart-quantity {
+    position: absolute;
+    top: -0.4rem;
+    right: 0;
+    background-color: black;
+    color: white;
+    width: 1.1rem;
+    height: 1.1rem;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ /* ================ navbar-toggler ================ */
+ .navbar-toggle {
+    display: none;
+    font-size: 1.4rem;
+    margin: 0 0.4rem;
+ }
+
+  /* ================ Cart-SideBar ================ */
+
+  div.cart-sidebar-container.open{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(32, 38, 34, 0.7);
+    z-index: 1050;
+}
+
+div.cart-sidebar-container.close {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+div.cart-sidebar.open {
+    width: 500px;
+    background-color: whitesmoke;
+    position: absolute;
+    overflow-y: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1110;
+}
+div.cart-sidebar.close {
+    width: 0;
+    overflow: hidden;
+}
+
+@media screen and (max-width:576px) {
+    div.cart-sidebar.open {
+        width: 100%;
+    }    
+}
+
+.cart-sidebar-cencel.open {
+    display: block;
+    position: absolute;
+    top: 0.7rem;
+    left: 2rem;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 1100;
+}
+.cart-sidebar-cencel.close {
+    display: none;
+}
+
+.cart-sidebar-cencel:hover {
+    color: red;
+    border-color: red;
+}

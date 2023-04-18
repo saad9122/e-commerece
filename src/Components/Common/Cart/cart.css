@@ -1,0 +1,18 @@
+div.product img {
+    width: 7rem;
+}
+
+.cart-product-icons:hover {
+    cursor: pointer;
+    transform:scale(1.05)
+}
+
+.quantity-btn {
+    background-color: black;
+    color: white;
+    padding: 0.2rem;
+    border-radius: 50%;
+}
+
+
+
