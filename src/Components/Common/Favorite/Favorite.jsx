@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectFavorite } from './favoriteSlice'
 import { Main } from '../../Dynamic/Main'
 import { selectFilteredShoes } from '../../../Slices/Men/MenSlice'
 
@@ -11,7 +10,7 @@ export const Favorite = () => {
     <div>
       <button onClick={() => console.log(favorite)}>show Favorite</button>
 
-      <Main shoesCat = {favorite} />
+      <Main shoesCat = {favorite} section = {'favorite'}/>
         
     </div>
   )

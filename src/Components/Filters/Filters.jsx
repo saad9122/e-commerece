@@ -5,7 +5,6 @@ import { ADD_COLOR_FILTER, ADD_SIZE_FILTER, PRICE_ADD_FILTER, REMOVE_COLOR_FILTE
 import { totalPrices} from '../../data';
 import { totalmenShoesColors,totalMenSizes } from '../../data';
 import { totalWomenColors,totalWomenSizes } from '../../womendata';
-import { selectFavorite } from '../../Slices/Men/MenSlice';
 import { totalKidsColors, totalKidsSizes } from '../../kidsShoesData';
 
 export const Filters = ({shoesCat}) => {

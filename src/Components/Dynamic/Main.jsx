@@ -11,7 +11,6 @@ import { Filters } from '../Filters/Filters'
 import { selectFilter } from '../Filters/FilterSlice'
 
 
-
 export const Main = (props) => {
 
     const shoesCat = props.shoesCat
@@ -117,7 +116,7 @@ export const Main = (props) => {
             <option value="highToLow">Price: High to Low</option>
             <option value="newest">Newest</option>
             <option value="featured">Featured</option>
-        </select>
+        </select>   
       </div>
 
       {shoesCat.length === 0 ? <p className='text-xl text-center'>No Products to Show</p> : null} 

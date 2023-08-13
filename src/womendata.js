@@ -49,7 +49,8 @@ export const womenShoesData = [
         images:[WA1,WA2,WA3,WA4],
         gender:'Women',
         colors:['gray','white'],
-        date: new Date (2023,3,15).getTime()
+        date: new Date (2023,3,15).getTime(),
+        inWishList: false
 
     },
     {
@@ -61,7 +62,8 @@ export const womenShoesData = [
         images:[WB1,WB2,WB3,WB4],
         gender:'Women',
         colors:['pink','white'],
-        date: new Date (2023,3,15).getTime()
+        date: new Date (2023,3,15).getTime(),
+        inWishList: false
     },
     {
         id:'WC',
@@ -72,7 +74,8 @@ export const womenShoesData = [
         images:[WC1,WC2,WC3,WC4],
         gender:'Women',
         colors:['pink','white'],
-        date: new Date (2023,4,10).getTime()
+        date: new Date (2023,4,10).getTime(),
+        inWishList: false
     },
     {
         id:'WD',
@@ -83,7 +86,8 @@ export const womenShoesData = [
         images:[WD1,WD2,WD3,WD4],
         gender:'Women',
         colors:['orange','white'],
-        date: new Date (2023,4,1).getTime()
+        date: new Date (2023,4,1).getTime(),
+        inWishList: false
     },
     {
         id:'WE',
@@ -94,7 +98,8 @@ export const womenShoesData = [
         images:[WE1,WE2,WE3,WE4],
         gender:'Women',
         colors:['blue','white'],
-        date: new Date (2023,4,5).getTime()
+        date: new Date (2023,4,5).getTime(),
+        inWishList: false
     },
     {
         id:'WF',
@@ -105,7 +110,8 @@ export const womenShoesData = [
         images:[WF1,WF2,WF3,WF4],
         gender:'Women',
         colors:['pink'],
-        date: new Date (2023,4,4).getTime()
+        date: new Date (2023,4,4).getTime(),
+        inWishList: false
     },
     {
         id:'WG',
@@ -116,7 +122,8 @@ export const womenShoesData = [
         images:[WG1,WG2,WG3,WG4],
         gender:'Women',
         colors:['white'],
-        date: new Date (2023,3,15).getTime()
+        date: new Date (2023,3,15).getTime(),
+        inWishList: false
     },
     {
         id:'WH',
@@ -127,7 +134,8 @@ export const womenShoesData = [
         images:[WH1,WH2,WH2,WH4],
         gender:'Women',
         colors:['blue','white'],
-        date: new Date (2023,3,10).getTime()
+        date: new Date (2023,3,10).getTime(),
+        inWishList: false
     }
 ]
 

@@ -39,7 +39,8 @@ export const kidsShoesData= [
         images:[KA1,KA2,KA3,KA4],
         gender:'Kids',
         colors:['brown','white'],
-        date: new Date (2023,3,10).getTime()
+        date: new Date (2023,3,10).getTime(),
+        inWishList: false
     },
     {
         id:'KB',
@@ -50,7 +51,8 @@ export const kidsShoesData= [
         images:[KB1,KB2,KB3,KB4],
         gender:'Kids',
         colors:['blue','white'],
-        date: new Date (2023,3,11).getTime()
+        date: new Date (2023,3,11).getTime(),
+        inWishList: false
     },
     {
         id:'KC',
@@ -61,7 +63,8 @@ export const kidsShoesData= [
         images:[KC1,KC2,KC3,KC4],
         gender:'Kids',
         colors:['black','white'],
-        date: new Date (2023,4,9).getTime()
+        date: new Date (2023,4,9).getTime(),
+        inWishList: false
     },
     {
         id:'KD',
@@ -72,7 +75,8 @@ export const kidsShoesData= [
         images:[KD1,KD2,KD3,KD4],
         gender:'Kids',
         colors:['white'],
-        date: new Date (2023,3,12).getTime()
+        date: new Date (2023,3,12).getTime(),
+        inWishList: false
     },
     {
         id:'KE',
@@ -83,7 +87,8 @@ export const kidsShoesData= [
         images:[KE1,KE2,KE3,KE4],
         gender:'Kids',
         colors:['red','white'],
-        date: new Date (2023,3,10).getTime()
+        date: new Date (2023,3,10).getTime(),
+        inWishList: false
     },
     {
         id:'KF',
@@ -94,7 +99,8 @@ export const kidsShoesData= [
         images:[KF1,KF2,KF3,KF4],
         gender:'Kids',
         colors:['blue','white'],
-        date: new Date (2023,3,10).getTime()
+        date: new Date (2023,3,10).getTime(),
+        inWishList: false
     },
     
 ]

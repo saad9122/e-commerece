@@ -10,12 +10,14 @@ export const ShoesCard = (props) => {
 
   const [showCard,setShowCard] = useState(false);
 
+
   const showCardHandler = () => {
      setShowCard(!showCard)
   }
 
-
   const {shoe,addToBagHandler} = props
+
+  let removeBtn = shoe.gender.toLowerCase();
   
   // const handleView = () => {
   //   navigate('./view' ,{state:{shoe}})
@@ -53,6 +55,9 @@ export const ShoesCard = (props) => {
               <p className="text-lg text-slate-900">${price}</p>
             </div>
           </div>
+          {/* <button onClick={() => console.log(RemoveBtn)}>show Gender</button> */}
+          {/* {(removeBtn === 'men' || removeBtn === 'women' || removeBtn === 'kids') && <div>Remove From WishtList</div>} */}
+          
         </div>
         {showCard && <PopupCard product={shoe} showCardHandler={showCardHandler} cardHandler={addToBagHandler}
     text={'Add to Bag'} selectedSizeIndex={0} selectedQuantity={1}

@@ -1,16 +1,15 @@
 import React, { useState }  from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
-import { ADD_SORT_VALUE, ADD_TO_CART, ADD_TO_FAVORITE } from '../../../redux/actions/actions';
+import { ADD_TO_CART, ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from '../../../redux/actions/actions';
 
 import './productview.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faHeartBroken, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { selectFavorite } from '../../../../Slices/Men/MenSlice';
 
 // import { Magnifier } from "react-image-magnify";
-
-
 
 export const ProductView = () => {
 
@@ -19,8 +18,13 @@ export const ProductView = () => {
   const [quantity,setQuantity] = useState(1);
   const [selectedSize,setSelectedSize] = useState(0);
 
+  const wishlist = useSelector(selectFavorite)
+
+
   const myshoe = location.state
   const {id,name,price,sizes,available,images,gender} = myshoe
+
+  const isInWishLIst = wishlist.some(favShoe => favShoe.id === id)
 
   
   const [currentImg, setCurrentImg] = useState(images[1])
@@ -31,7 +35,7 @@ export const ProductView = () => {
 
   const addToBagHandler = (shoe,quantity,selectedSize) => {
 
-    const {id,name,price,sizes,available,images,gender} = shoe   
+    const {id,name,price,sizes,available,images,gender} = shoe    
 
     const product = {
       id:id,
@@ -107,7 +111,19 @@ export const ProductView = () => {
           </div>
           
           <div className='text-lg w-full md:w-3/5'>
-              <button className='wishlist-btn' onClick={() => dispatch(ADD_TO_FAVORITE(myshoe))}> <FontAwesomeIcon  icon={faHeart}/> Add to WishList</button> 
+
+            { isInWishLIst ? 
+
+          <button className='wishlist-btn' onClick={() => dispatch(REMOVE_FROM_FAVORITE(myshoe))}>
+          <FontAwesomeIcon  icon={faHeartBroken}/> Remove from WishList</button>
+            
+            
+            :
+              <button className='wishlist-btn' onClick={() => dispatch(ADD_TO_FAVORITE(myshoe))}>
+              <FontAwesomeIcon  icon={faHeart}/> Add to WishList</button>
+
+            }
+               
           </div>
           
         </div>

@@ -1,7 +1,3 @@
-
-
-
-
 export const sortSliceReducer = (sortValue = '', actions) => {
 
     switch(actions.type) {

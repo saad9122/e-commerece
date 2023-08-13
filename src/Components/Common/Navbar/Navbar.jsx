@@ -27,6 +27,10 @@ export const Navbar = () => {
     setCartSideBar('close')
   }
 
+  const closeNavbar = () => {
+    setResponsive(false)
+  }
+
    const handleToogle = () => {
     setResponsive(!responsive);
    }
@@ -43,6 +47,7 @@ export const Navbar = () => {
    const clearSortAndFIlters = () => {
     dispatch(CLEAR_ALL_FILTERS())
     dispatch(CLEAR_SORT())
+    closeNavbar();
    }
 
   return (
@@ -63,9 +68,9 @@ export const Navbar = () => {
             <p className='text-4xl font-bold antialiased]'>Exlusive</p>
             <div className={`navbar ${toggle}`}>
               <div className='flex items-center'>
-                    <ul className='navbar-ul'>
-                      <li onClick={clearSortAndFIlters}><Link to='/'>Home</Link></li>
-                      <li onClick={clearSortAndFIlters}><Link to='/men'>Men </Link></li>
+                    <ul className={`navbar-ul ${toggle}`}>
+                      {/* <li onClick={clearSortAndFIlters}><Link to='/'>Home</Link></li> */}
+                      <li onClick={clearSortAndFIlters}><Link to='/'>Men </Link></li>
                       <li onClick={clearSortAndFIlters}><Link to='/women'>Women</Link></li>
                       <li onClick={clearSortAndFIlters}><Link to='/kids'>Kids</Link></li>
                     </ul>

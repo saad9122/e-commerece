@@ -72,7 +72,7 @@ export const menShoesData = [
         images:[A1,A2,A3,A4],
         gender:'Men',
         colors:['brown'],
-        date: new Date (2023,3,10).getTime()
+        date: new Date (2023,3,10).getTime(),
         
     },
     {
@@ -84,7 +84,7 @@ export const menShoesData = [
         images:[B1,B2,B3,B4],
         gender:'Men',
         colors:['black','gray'],
-        date: new Date (2023,2,11).getTime()
+        date: new Date (2023,2,11).getTime(),
         
     },
     {
@@ -96,7 +96,7 @@ export const menShoesData = [
         images:[C1,C2,C3,C4],
         gender:'Men',
         colors:['gray','white'],
-        date: new Date (2023,3,4).getTime()
+        date: new Date (2023,3,4).getTime(),
         
     },
     {
@@ -108,7 +108,7 @@ export const menShoesData = [
         images:[D1,D2,D3,D4],
         gender:'Men',
         colors:['gray'],
-        date: new Date (2023,3,1).getTime()
+        date: new Date (2023,3,1).getTime(),
         
     },
     {
@@ -120,7 +120,7 @@ export const menShoesData = [
         images:[E1,E2,E3,E4],
         gender:'Men',
         colors:['white'],
-        date: new Date (2023,1,10).getTime()
+        date: new Date (2023,1,10).getTime(),
         
     },
     {
@@ -132,7 +132,7 @@ export const menShoesData = [
         images:[F1,F2,F3,F4],
         gender:'Men',
         colors:['black'],
-        date: new Date (2023,3,2).getTime()
+        date: new Date (2023,3,2).getTime(),
         
     },
     {
@@ -144,7 +144,7 @@ export const menShoesData = [
         images:[J1,J2,J3,J4],
         gender:'Men',
         colors:['red','gray'],
-        date: new Date (2023,2,20).getTime()
+        date: new Date (2023,2,20).getTime(),
         
     },
     {
@@ -156,7 +156,7 @@ export const menShoesData = [
         images:[K1,K2,K3,K4],
         gender:'Men',
         colors:['green','gray'],
-        date: new Date (2023,3,20).getTime()
+        date: new Date (2023,3,20).getTime(),
         
     },
     {
@@ -168,7 +168,7 @@ export const menShoesData = [
         images:[L1,L2,L3,L4],
         gender:'Men',
         colors:['yellow','white'],
-        date: new Date (2023,1,29).getTime()
+        date: new Date (2023,1,29).getTime(),
         
     },
     {
@@ -180,7 +180,7 @@ export const menShoesData = [
         images:[M1,M2,M3,M4],
         gender:'Men',
         colors:['maroon','white'],
-        date: new Date (2023,3,11).getTime()
+        date: new Date (2023,3,11).getTime(),
         
     },
     {
@@ -192,7 +192,7 @@ export const menShoesData = [
         images:[N1,N2,N3,N4],
         gender:'Men',
         colors:['pink'],
-        date: new Date (2023,3,14).getTime()
+        date: new Date (2023,3,14).getTime(),
         
     },
     {
@@ -204,7 +204,7 @@ export const menShoesData = [
         images:[O1,O2,O3,O4],
         gender:'Men',
         colors:['blue','white'],
-        date: new Date (2023,3,15).getTime()
+        date: new Date (2023,3,15).getTime(),
         
     }
 ] 

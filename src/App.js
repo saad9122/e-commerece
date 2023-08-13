@@ -20,8 +20,8 @@ const  App = () => {
     <BrowserRouter >
       <Navbar />
         <Routes>
-            <Route path='/' element= {<Home/>}/>
-            <Route path='/men' element ={<Men/>}/>
+            {/* <Route path='/' element= {<Home/>}/> */}
+            <Route path='/' element ={<Men/>}/>
             <Route path='/women' element={<Women/>}/>
             <Route path='/kids' element={<Kids/>}/>
             <Route path='/favorite' element={<Favorite/>}/>

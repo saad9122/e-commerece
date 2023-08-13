@@ -17,24 +17,26 @@
     bottom: 0rem;
     width: auto;
     height: auto;
-    background-color: grey;
-    overflow: visible;
+    background-color: rgba(32, 38, 34, 0.7);   
+    z-index: 1050;
     
  }
  
   /* =================navbar ul==================== */
 
-div.navbar-mobile ul.navbar-ul {
+ul.navbar-ul.mobile {
+    background-color: white;
     position: absolute;
     top: 2rem;
+    left: 2rem;
+    right: 2rem;
     bottom: 2rem;
-    left: 1rem;
-    right: 1rem;
-    background-color:rebeccapurple;
-    border-radius: 0.5rem;
-    padding: 1rem;
-
+    padding: 2rem;
 }
+ul.navbar-ul.mobile li {
+    border-bottom: 2px solid black;
+}
+
  /* =================navbar li==================== */
 
 div.navbar.mobile li {
@@ -73,4 +75,5 @@ div.navbar.mobile a{
     padding: 0.1rem 0.5rem;
  }
 
- 
+
+
