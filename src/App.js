@@ -15,7 +15,7 @@ import { ProductView } from './Components/Common/Cart/ProductView/ProductView';
 
 const  App = () => {
   return (
-    <div className="2xl:container mx-auto App">
+    <div className="2xl:container mx-auto App overflow-hidden">
     
     <BrowserRouter >
       <Navbar />
@@ -28,6 +28,7 @@ const  App = () => {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/view' element={<ProductView/>}/>
         </Routes>
+      
       <Footer/>
     </BrowserRouter>
 

@@ -27,13 +27,26 @@ export const Navbar = () => {
     setCartSideBar('close')
   }
 
+
   const closeNavbar = () => {
+
+    document.body.style.overflow = 'auto'
+
     setResponsive(false)
   }
 
-   const handleToogle = () => {
-    setResponsive(!responsive);
-   }
+  const openNavbar = () => {
+
+    document.body.style.overflow = 'hidden'
+
+    setResponsive(true)
+
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo(0,0)
+  }
+  
    const toggle = responsive ? 'mobile' : 'pc';
 
    const cartQuantity = (myArray) => {
@@ -70,9 +83,9 @@ export const Navbar = () => {
               <div className='flex items-center'>
                     <ul className={`navbar-ul ${toggle}`}>
                       {/* <li onClick={clearSortAndFIlters}><Link to='/'>Home</Link></li> */}
-                      <li onClick={clearSortAndFIlters}><Link to='/'>Men </Link></li>
-                      <li onClick={clearSortAndFIlters}><Link to='/women'>Women</Link></li>
-                      <li onClick={clearSortAndFIlters}><Link to='/kids'>Kids</Link></li>
+                      <li onClick={clearSortAndFIlters}><Link to='/' onClick ={scrollToTop} >Men </Link></li>
+                      <li onClick={clearSortAndFIlters}><Link to='/women' onClick ={scrollToTop}>Women</Link></li>
+                      <li onClick={clearSortAndFIlters}><Link to='/kids' onClick ={scrollToTop} >Kids</Link></li>
                     </ul>
               </div>
             </div>
@@ -91,8 +104,8 @@ export const Navbar = () => {
 
                   </div>
                   
-                  {responsive ? <FontAwesomeIcon icon={faXmark} className= {`navbar-toggle ${toggle}`} onClick={handleToogle}/>
-                  : <FontAwesomeIcon icon={faBars} className= {`navbar-toggle ${toggle}`} onClick={handleToogle}/>
+                  {responsive ? <FontAwesomeIcon icon={faXmark} className= {`navbar-toggle ${toggle}`} onClick={closeNavbar}/>
+                  : <FontAwesomeIcon icon={faBars} className= {`navbar-toggle ${toggle}`} onClick={openNavbar}/>
 
                   }
                   
