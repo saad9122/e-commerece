@@ -1,5 +1,4 @@
 import React from 'react'
-import { totalWomenColors } from '../../../womendata'
 
 export const Home = () => {
   return (

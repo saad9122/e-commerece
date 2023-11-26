@@ -89,14 +89,14 @@ let totalSizes = []
     }
     
   return (
-    <section id='filters' className='overflow-scroll'>
+    <section id='filters' className='overflow-scroll filters'>
         {/* <button onClick={() => console.log(gender)}>show Filter</button> */}
         <div className='bg-black py-4 filters-heading'>
             <h1 className='text-2xl text-white text-center'>Filters</h1>
         </div>
         <div className='px-4 mt-2'>
             <div>
-                <div className='bg-gray-900 py-2 rounded-sm'>
+                <div className='bg-black py-2 rounded-lg'>
                      <h1 className='text-xl text-gray-100 text-center'>Shop By Price</h1>
                 </div>
 
@@ -113,7 +113,7 @@ let totalSizes = []
             </div>
 
             <div>
-                 <div className='bg-gray-900 py-2 rounded-sm'>
+                 <div className='bg-black py-2 rounded-lg'>
                      <h1 className='text-xl text-gray-100 text-center'>Shop By Size</h1>
                 </div>
                 <ul className='space-y-2 p-4'>
@@ -129,7 +129,7 @@ let totalSizes = []
                 </ul>
             </div>
             <div>
-                <div className='bg-gray-900 py-2 rounded-sm'>
+                <div className='bg-black py-2 rounded-lg'>
                      <h1 className='text-xl text-gray-100 text-center'>Shop By Colors</h1>
                 </div>
                 <ul className='space-y-2 p-4'>

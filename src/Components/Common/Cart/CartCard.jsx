@@ -2,8 +2,13 @@ import { faEdit, faTrashCan } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { PopupCard } from '../../Dynamic/PopupCard'
+import { useNotificationHandler } from '../../../context/NotificationContext'
+import { notificationTypes } from '../../Notification/notificationTypes'
 
 export const CartCard = ({product,removeItem,updateCartHandler}) => {
+
+
+    const {handleShowNotification,handleNotificationInfo} = useNotificationHandler()
 
     const {id,name,price,size,available,images,gender,quantity,uniqueId,sizes} = product
     const selectedSizeIndex = sizes.indexOf(size)
@@ -13,6 +18,11 @@ export const CartCard = ({product,removeItem,updateCartHandler}) => {
 
     const showCardHandler = () =>{
       setShowCard(!showCard)
+    }
+    const handleRemoveItem = () => {
+      handleNotificationInfo(notificationTypes.deleted)
+      handleShowNotification()
+       removeItem(product)
     }
   return (
     <div className='p-4'>
@@ -27,7 +37,7 @@ export const CartCard = ({product,removeItem,updateCartHandler}) => {
               <FontAwesomeIcon icon={faEdit} className="cart-product-icons hover:text-blue-600" 
               onClick={() => setShowCard(!showCard)}
               />
-              <FontAwesomeIcon icon={faTrashCan} onClick={() => removeItem(product)} 
+              <FontAwesomeIcon icon={faTrashCan} onClick={handleRemoveItem} 
               className="cart-product-icons hover:text-red-600"/>
             </div>
           </div>

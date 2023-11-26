@@ -60,7 +60,7 @@ export const ShoesCard = (props) => {
           
         </div>
         {showCard && <PopupCard product={shoe} showCardHandler={showCardHandler} cardHandler={addToBagHandler}
-    text={'Add to Bag'} selectedSizeIndex={0} selectedQuantity={1}
+    text={'Add to Bag'} selectedSizeIndex={0} selectedQuantity={1} 
     />}
     </div>
   )

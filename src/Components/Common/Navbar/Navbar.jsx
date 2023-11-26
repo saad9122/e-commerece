@@ -1,5 +1,4 @@
-import {faCalendar } from '@fortawesome/free-regular-svg-icons'
-import { faBars, faCartShopping, faCross, faHeart, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -12,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CLEAR_ALL_FILTERS, CLEAR_SORT } from '../../redux/actions/actions'
 import { CartSideBar } from '../Cart/CartSideBar'
 import { selectFavorite } from '../../../Slices/Men/MenSlice'
+import { AnimatePresence,motion } from 'framer-motion'
 
 export const Navbar = () => {
 
@@ -24,9 +24,15 @@ export const Navbar = () => {
 
 
   const closeCartSidebar = () => {
+    document.body.style.overflow = "auto"
     setCartSideBar('close')
   }
 
+
+  const openCartSidebar = () => {
+    document.body.style.overflow = "hidden"
+    setCartSideBar("open")
+  }
 
   const closeNavbar = () => {
 
@@ -63,18 +69,42 @@ export const Navbar = () => {
     closeNavbar();
    }
 
+   const handleDocumentClick = (e) => {
+
+    if(!e.target.closest(".cart-sidebar")){
+      closeCartSidebar()
+    }
+
+   }
+
   return (
     <section id='header' className='2xl:container mx-auto'>
 
       {/* ======================Cart SideBar ================== */}
 
-        <div className={`cart-sidebar-container ${cartSideBar}`} >
-              
-              <div className={`cart-sidebar ${cartSideBar}`}>
+        
+        <AnimatePresence>
+
+              {cartSideBar === "open" &&
+              <div className={`cart-sidebar-container ${cartSideBar}`} onClick={handleDocumentClick} >
+              <motion.div className={`cart-sidebar ${cartSideBar}`}
+              initial = {{x:350}}
+              transition={{type:"spring",damping:25,stiffness:100}}
+              animate = {{x : 0}}
+              exit={{x:0}}
+              >
               {/* <FontAwesomeIcon icon={faXmark}  className={`cart-sidebar-cencel ${cartSideBar}`} onClick={() => setCartSideBar('close')}/> */}
               <CartSideBar closeCartSidebar = {closeCartSidebar}/>
-              </div>
-        </div>
+              </motion.div> 
+              </div>     
+              }
+
+        </AnimatePresence>
+
+        
+
+
+        
 
       {/*=========================== Navbar =======================*/}
       <div className='flex justify-between items-center all-navbar'>
@@ -99,7 +129,7 @@ export const Navbar = () => {
                   </div>
 
                   <div className='cartIcon-container'>
-                     <button onClick={() => setCartSideBar('open') }><img src={cartIcon} alt="icon" className='icons'/></button>
+                     <button onClick={openCartSidebar}><img src={cartIcon} alt="icon" className='icons'/></button>
                      {cart.length>0 && <p className='cart-quantity'>{cartQuantity(cart)}</p>}
 
                   </div>

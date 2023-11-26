@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { faArrowRight, faFilter, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight, faFilter, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { ShoesCard } from '../Common/ShoesCard/ShoesCard'
@@ -9,6 +9,9 @@ import { REMOVE_FROM_CART } from '../redux/actions/actions'
 import { Bars } from '../Pages/Men/Bars'
 import { Filters } from '../Filters/Filters'
 import { selectFilter } from '../Filters/FilterSlice'
+import { Notification } from '../Notification/Notification'
+
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 export const Main = (props) => {
@@ -17,6 +20,8 @@ export const Main = (props) => {
 
   const [girdCols,setGridCols] = useState('three')
   const [sideBar,setSideBar] = useState('close')
+
+
 
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter)
@@ -44,10 +49,13 @@ export const Main = (props) => {
   } 
 
   const openSideBar = () => {
+    document.body.style.overflow = "hidden"
+
     setSideBar('open')
   }
 
   const closeSideBar = () => {
+    document.body.style.overflow = "auto"
     setSideBar('close')
   }
 
@@ -63,6 +71,13 @@ export const Main = (props) => {
     dispatch(ADD_SORT_VALUE(value))
   }
 
+  const handleDocumentClick = (e) => {
+    
+    if(!e.target.closest(".filters-sidebar")) {
+
+      closeSideBar()
+    }
+  }
 
   return (
     <section id='men' className='px-4 md:px-8 lg:px-12'>
@@ -71,11 +86,26 @@ export const Main = (props) => {
 
       <div className='filter-and-sort'>
 
-      <div className={`sidebar-container ${sideBar}`} >
-        <div className={`sidebar ${sideBar}`}>
-        <FontAwesomeIcon icon={faXmark}  className='sidebar-cencel' onClick={closeSideBar}/>
-          <Filters shoesCat = {shoesCat}/>
-        </div>
+      <div className={`sidebar-container ${sideBar}`} onClick={handleDocumentClick}>
+        <AnimatePresence>
+            {
+              sideBar === "open" &&
+              <motion.div className={`sidebar ${sideBar} filters-sidebar`}
+              initial = {{x:-350}}
+              transition={{type:"spring",damping:25,stiffness:100}}
+              animate = {{x : 0}}
+              exit={{x:-350}}
+              
+              >
+
+              <FontAwesomeIcon icon={faArrowLeft}  className='sidebar-cencel' onClick={closeSideBar}/>
+              <Filters shoesCat = {shoesCat}/>
+            
+            </motion.div>
+
+            }
+        </AnimatePresence>
+        
       </div>
 
       {/* =====================Cart SideBar ====================== */}

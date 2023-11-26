@@ -7,9 +7,13 @@ section#men {
     padding-top: 4rem;
 }
    
+div.sidebar-container {
+    transition: 2s;
+}
 
 /* ===============SideBar =============== */
 div.sidebar-container.open {
+    transition: 2s;
     display: block;
     position: fixed;
     top: 0;
@@ -28,7 +32,7 @@ div.sidebar-container.close {
 
 
 div.sidebar.open {
-    width: 500px;
+    width: 22rem;
     background-color: whitesmoke;
     position: absolute;
     overflow-y: auto;
@@ -57,14 +61,12 @@ div.sidebar.close {
         font-size: 1.5rem;
         padding: 0.4rem 0.6rem;
         border-radius: 0.3rem;
-        border: 2px solid white;
         cursor: pointer;
         z-index: 1100;
     }
 
 .sidebar-cencel:hover {
     color: red;
-    border-color: red;
 }
 
 p.show-filter {

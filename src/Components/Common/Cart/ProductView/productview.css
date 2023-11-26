@@ -28,7 +28,8 @@ img.view-img:hover {
 /* ============Main display image============== */
 
 img.display-view-img {
-    width: 30rem;
+    width: 22rem;
+    height: 25rem;
 }
 
 /* ============seleted Quantity Button============== */

@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { PopupCard } from '../../Dynamic/PopupCard';
+import { useNotificationHandler } from '../../../context/NotificationContext';
+import { notificationTypes } from '../../Notification/notificationTypes';
 
 export const CartSideBarList = ({product,closeCartSidebar,removeItem,updateCartHandler}) => {
 
     const [showCard,setShowCard] = useState(false)
 
-
+    const {handleShowNotification,handleNotificationInfo} = useNotificationHandler()
 
     const {id,name,price,size,available,images,gender,quantity,uniqueId,sizes} = product;
 
@@ -16,10 +18,15 @@ export const CartSideBarList = ({product,closeCartSidebar,removeItem,updateCartH
     const total = quantity* price;
     
       const showCardHandler = () =>{
-        setShowCard(!showCard)
-        console.log('from CardHandler')
-      }
 
+        setShowCard(!showCard)
+
+      }
+      const handleRemoveItem = () => {
+        handleNotificationInfo(notificationTypes.deleted)
+        handleShowNotification()
+         removeItem(product)
+      }
 
     return (
         
@@ -43,7 +50,7 @@ export const CartSideBarList = ({product,closeCartSidebar,removeItem,updateCartH
                     {showCard && <PopupCard product={product} showCardHandler={showCardHandler} cardHandler={updateCartHandler}
                     text={'Update Card'} selectedSizeIndex={selectedSizeIndex} selectedQuantity={product.quantity}
                     />}
-                    <FontAwesomeIcon icon={faTrashCan} onClick={() => removeItem(product)} 
+                    <FontAwesomeIcon icon={faTrashCan} onClick={handleRemoveItem} 
                     className="cart-product-icons hover:text-red-600"/>
                 </div>
 

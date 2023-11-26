@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartBroken, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { selectFavorite } from '../../../../Slices/Men/MenSlice';
+import { useNotificationHandler } from '../../../../context/NotificationContext';
+import { notificationTypes } from '../../../Notification/notificationTypes';
 
 // import { Magnifier } from "react-image-magnify";
 
@@ -17,6 +19,8 @@ export const ProductView = () => {
   const dispatch = useDispatch();
   const [quantity,setQuantity] = useState(1);
   const [selectedSize,setSelectedSize] = useState(0);
+
+  const {handleShowNotification,handleNotificationInfo} = useNotificationHandler()
 
   const wishlist = useSelector(selectFavorite)
 
@@ -55,13 +59,13 @@ export const ProductView = () => {
     dispatch(ADD_TO_CART(product))
   } 
   const addtoBagBtn = () => {
+
+    handleNotificationInfo(notificationTypes.added)
+    handleShowNotification()
+    
+
     addToBagHandler(myshoe,quantity,selectedSize)
    } 
-
-   const handleWishList = (myshoe) => {
-    dispatch(ADD_TO_FAVORITE(myshoe))
-
-   }
   
   return (
     <div className='pt-14 px-2 md:px-8'>
@@ -70,8 +74,6 @@ export const ProductView = () => {
         <div className='basis-full md:basis-1/2 flex flex-col p-4'>
             <div className='flex justify-center'>
               <img src={currentImg} alt='Shoes' className='display-view-img' />
-
-              
             </div>
             <div className='p-2 img-container'>
               <img src={images[0]} alt='Shoe' onClick={() => setCurrentImg(images[0])} className='view-img'/>

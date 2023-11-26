@@ -8,6 +8,7 @@ section#header {
 
 div.all-navbar{
     position: fixed;
+    top: 0;
     width: 100%;  
     background-color: white;
     
@@ -89,6 +90,7 @@ p.cart-quantity {
   /* ================ Cart-SideBar ================ */
 
   div.cart-sidebar-container.open{
+    transition: 2s;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -99,13 +101,11 @@ p.cart-quantity {
 }
 
 div.cart-sidebar-container.close {
-    width: 0;
-    height: 0;
     overflow: hidden;
 }
 
-div.cart-sidebar.open {
-    width: 500px;
+div.cart-sidebar {
+    width: 28rem;
     background-color: whitesmoke;
     position: absolute;
     overflow-y: auto;
@@ -113,10 +113,6 @@ div.cart-sidebar.open {
     top: 0;
     bottom: 0;
     z-index: 1110;
-}
-div.cart-sidebar.close {
-    width: 0;
-    overflow: hidden;
 }
 
 @media screen and (max-width:576px) {

@@ -39,7 +39,6 @@ export const Cart = () => {
 
     
     <div className='2xl:container mx-auto pt-12'>
-      <button onClick={() => console.log(cart)}>show Cart</button>
       <div className='flex flex-wrap'>
         <div className='flex-auto lg:basis-2/3 shadow-md'>
         <div className='flex justify-center text-center'>

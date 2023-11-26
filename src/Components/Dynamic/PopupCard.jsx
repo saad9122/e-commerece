@@ -1,14 +1,20 @@
 import { faMinus, faPlus,faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
+import { useNotificationHandler } from '../../context/NotificationContext';
+import { notificationTypes } from '../Notification/notificationTypes';
 
 
-export const PopupCard = ({product,showCardHandler,cardHandler,text,selectedSizeIndex,selectedQuantity}) => {
+export const PopupCard =
+ ({product,showCardHandler,cardHandler,text,selectedSizeIndex,selectedQuantity}) => {
 
 
 
     const [quantity,setQuantity] = useState(selectedQuantity);
     const [selectedSize,setSelectedSize] = useState(selectedSizeIndex);
+
+    const {handleShowNotification,handleNotificationInfo} = useNotificationHandler()
+    
 
     const {id,name,price,sizes,available,images,gender} = product
 
@@ -17,6 +23,10 @@ export const PopupCard = ({product,showCardHandler,cardHandler,text,selectedSize
     }
    const addtoBagBtn = () => {
     cardHandler(product,quantity,selectedSize)
+
+    text === "Update Card" ? handleNotificationInfo(notificationTypes.updated) : handleNotificationInfo(notificationTypes.added)
+
+    handleShowNotification()
     showCardHandler()
    }    
 
